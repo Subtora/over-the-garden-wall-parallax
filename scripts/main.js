@@ -1,10 +1,25 @@
 var pos = document.getElementsByClassName("pos");
+var trees = document.getElementsByClassName("trees");
 var scroll = window.scrollY;
-pos[0].innerText = `${scroll}`;
-pos[1].innerText = `${scroll}`;
-window.addEventListener("scroll", function(event) {
+
+function init() {
+  update();
+}
+
+function moveY(obj, ammount) {
+  obj.style = `transform:translateY(${ammount}px)`;
+}
+
+function update() {
   var scroll = this.scrollY;
-  console.log(scroll);
   pos[0].innerText = `${scroll}`;
   pos[1].innerText = `${scroll + window.innerHeight}`;
+
+  moveY(trees[0], scroll / 3);
+}
+
+window.addEventListener("scroll", function(event) {
+  update();
 });
+
+init();

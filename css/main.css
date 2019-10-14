@@ -2,10 +2,11 @@ body {
   height: 2000px;
   padding: 0;
   margin: 0;
-  background-image: url("https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fpapers.co%2Fwallpaper%2Fpapers.co-vj23-htc-one-background-mountain-pattern-art-blue-34-iphone6-plus-wallpaper.jpg&f=1&nofb=1");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-image: linear-gradient(
+      rgba(236, 236, 236, 0.92),
+      rgba(236, 236, 236, 0.92)
+    ),
+    url(https://i.imgur.com/0X9bfZ0.gif);
 }
 .pos {
   background-color: #fff;
