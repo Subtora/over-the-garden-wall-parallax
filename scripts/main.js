@@ -15,9 +15,10 @@ function update() {
   pos[0].innerText = `${scroll}`;
   pos[1].innerText = `${scroll + window.innerHeight}`;
 
-  moveY(trees[0], scroll * -0.5);
-  moveY(trees[1], scroll * -0.4);
-  moveY(trees[2], scroll * -0.3);
+  moveY(trees[0], scroll * -0.1);
+  moveY(trees[1], scroll * -0.3);
+  moveY(trees[2], scroll * -0.5);
+  moveY(trees[3], scroll * -0.7);
 }
 
 window.addEventListener("scroll", function(event) {

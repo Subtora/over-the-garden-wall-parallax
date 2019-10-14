@@ -2,11 +2,7 @@ body {
   height: 2000px;
   padding: 0;
   margin: 0;
-  background-image: linear-gradient(
-      rgba(236, 236, 236, 0.92),
-      rgba(236, 236, 236, 0.92)
-    ),
-    url(https://i.imgur.com/0X9bfZ0.gif);
+  background-color: rgba(198, 227, 255, 0.92);
 }
 .pos {
   background-color: #fff;
@@ -21,7 +17,33 @@ body {
   bottom: 0;
 }
 .foliage {
+  position: fixed;
+  transform: translateY(50vh);
 }
 .trees {
-  position: fixed;
+  background-image: url("../images/trees.png");
+  background-repeat: repeat-x;
+  position: absolute;
+  width: 150vw;
+  height: 500px;
+}
+.trees:nth-child(1) {
+  margin-top: -250px;
+  background-size: 10%;
+  background-position: 120% 50%;
+}
+.trees:nth-child(2) {
+  margin-top: -220px;
+  background-size: 20%;
+  background-position: 100% 50%;
+}
+.trees:nth-child(3) {
+  margin-top: -150px;
+  background-size: 50%;
+  background-position: 20% 50%;
+}
+.trees:nth-child(4) {
+  margin-top: 10px;
+  background-size: 70%;
+  background-position: 150% 50%;
 }
