@@ -20,3 +20,8 @@ body {
 .posBot {
   bottom: 0;
 }
+.foliage {
+}
+.trees {
+  position: fixed;
+}
