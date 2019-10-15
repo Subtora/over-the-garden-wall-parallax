@@ -1,10 +1,13 @@
 var parallax = document.getElementsByClassName("parallax");
 var scroll = window.scrollY;
+var title = document.getElementsByClassName("inner-text")[0];
 
 function init() {
   update();
 }
-
+function pos(obj) {
+  return obj.getBoundingClientRect();
+}
 function moveY(obj, ammount, direction) {
   switch (direction) {
     case "U": //up
@@ -31,6 +34,13 @@ function update() {
       (scroll * parallax[i].getAttribute("plx-speed")) / 10,
       parallax[i].getAttribute("plx-direction")
     );
+  }
+  if (scroll > 1250) {
+    title.classList.remove("parallax");
+  } else {
+    if (!title.classList.contains("parallax")) {
+      title.classList.add("parallax");
+    }
   }
 }
 
