@@ -5,10 +5,22 @@ var title = document.getElementsByClassName("inner-text")[0];
 function init() {
   update();
 }
+
 function pos(obj) {
   return obj.getBoundingClientRect();
 }
-function moveY(obj, ammount, direction) {
+
+function show(obj, scrollCurr, showHideAt) {
+  if (obj.classList.contains("toggleHidden")) {
+    if (scrollCurr > showHideAt) {
+      obj.classList.remove("hidden");
+    } else {
+      obj.classList.add("hidden");
+    }
+  }
+}
+
+function move(obj, ammount, direction) {
   switch (direction) {
     case "U": //up
       obj.style = `transform:translateY(${-ammount}px)`;
@@ -29,11 +41,12 @@ function moveY(obj, ammount, direction) {
 function update() {
   var scroll = this.scrollY;
   for (var i = 0; i < parallax.length; i++) {
-    moveY(
+    move(
       parallax[i],
       (scroll * parallax[i].getAttribute("plx-speed")) / 10,
       parallax[i].getAttribute("plx-direction")
     );
+    show(parallax[i], scroll, parallax[i].getAttribute("showHideAt"));
   }
   if (scroll > 1250) {
     title.classList.remove("parallax");
